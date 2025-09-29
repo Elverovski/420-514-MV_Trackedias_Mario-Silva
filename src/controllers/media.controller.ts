@@ -11,6 +11,9 @@ export class MediaController {
     res.json(medias)
   }
 
+  public async getMediaById(req: Request, res: Response): Promise<void>{
+    req.
+  }
 
 
   
