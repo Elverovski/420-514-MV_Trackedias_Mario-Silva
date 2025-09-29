@@ -1,13 +1,12 @@
-import { User } from '../interfaces/user.interface';
-import { Media } from '../interfaces/media.interface';
 import { Role } from '../enum/role.enum';
+import { MediaModel as Media } from '../models/media.model'
 
-export class UserModel implements User {
-  constructor(
-    public id: number,
-    public email: string,
-    public password: string,
-    public role: Role = Role.USER,
-    public favorites: Media[]
-    ) {}
+export class UserModel {
+    constructor(
+        public id: number,
+        public email: string,
+        public password: string,
+        public role: Role = Role.USER,
+        public favorites: Media[]
+    ) { }
 }
