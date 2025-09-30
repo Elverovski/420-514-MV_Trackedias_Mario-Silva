@@ -12,6 +12,8 @@ export class FilmService {
     }
 
     public static async getFilmById(id: string): Promise<Film | undefined> {
-        return film.find(film => film.id === id);
-    }    
+        const filmdata = fs.readFileSync(filepath, "utf8");
+        const films: Film[] = JSON.parse(filmdata)["film"];
+        return films.find(film => film.id === id);
+    }       
 }

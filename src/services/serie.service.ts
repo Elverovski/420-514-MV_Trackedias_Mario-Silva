@@ -11,8 +11,18 @@ export class SerieService {
     }
 
     public static async getSerieById(id: string): Promise<Serie | undefined> {
-        return serie.find(serie => serie.id === id);
-    }    
+        const serieData = fs.readFileSync(filepath, "utf8");
+        const series: Serie[] = JSON.parse(serieData)["serie"];
+        return series.find(serie => serie.id === id);
+    }  
+    
+    public static async createSerie(newSerie: Serie): Promise<void> {
+        const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
+        if (!data["serie"]) data["serie"] = [];
+        data["serie"].push(newSerie);
+        fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
+    }
+
 }
     
 

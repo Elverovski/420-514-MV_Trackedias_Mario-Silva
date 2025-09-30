@@ -1,5 +1,5 @@
-export enum Status {
-    IN_PROGRESS = "in_progress",
-    WAITING = "waiting",
-    FINISHED = "finished"
+export enum Statut {
+    EN_COURS = "en_cours",
+    EN_ATTENTE = "en_attente",
+    TERMINE = "termine"
 }
