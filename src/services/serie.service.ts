@@ -23,6 +23,8 @@ export class SerieService {
         fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
     }
 
+    
+
 }
     
 

@@ -2,9 +2,11 @@ import { Router } from 'express';
 import { MediaController } from '../controllers/media.controller'
 
 const router = Router();
-const userController = new MediaController();
+const mediaController = new MediaController();
 
-router.get('/medias', userController.getAllMedia);
+router.get('/medias', mediaController.getAllMedia);
+router.get('/medias/:id', mediaController.getMediaById);
+router.post('/medias', mediaController.addMedia)
 
 
 export default router;

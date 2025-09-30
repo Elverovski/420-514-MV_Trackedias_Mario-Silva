@@ -89,6 +89,15 @@
       "rating": 8.7,
       "duration": 146,
       "watched": true
+    },
+    {
+      "id": "f8",
+      "title": "Interstellar",
+      "genre": "Sci-Fi",
+      "year": 2014,
+      "rating": 8.6,
+      "duration": 169,
+      "watched": false
     }
   ],
   "serie": [
@@ -105,16 +114,40 @@
           "seasonNumber": 1,
           "releaseDate": "2008-01-20",
           "episodes": [
-            { "id": "s1e1", "title": "Pilot", "duration": 58, "episodeNumber": 1, "watched": true },
-            { "id": "s1e2", "title": "Cat's in the Bag...", "duration": 48, "episodeNumber": 2, "watched": true }
+            {
+              "id": "s1e1",
+              "title": "Pilot",
+              "duration": 58,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s1e2",
+              "title": "Cat's in the Bag...",
+              "duration": 48,
+              "episodeNumber": 2,
+              "watched": true
+            }
           ]
         },
         {
           "seasonNumber": 2,
           "releaseDate": "2009-03-08",
           "episodes": [
-            { "id": "s2e1", "title": "Seven Thirty-Seven", "duration": 47, "episodeNumber": 1, "watched": true },
-            { "id": "s2e2", "title": "Grilled", "duration": 48, "episodeNumber": 2, "watched": true }
+            {
+              "id": "s2e1",
+              "title": "Seven Thirty-Seven",
+              "duration": 47,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s2e2",
+              "title": "Grilled",
+              "duration": 48,
+              "episodeNumber": 2,
+              "watched": true
+            }
           ]
         }
       ]
@@ -132,8 +165,20 @@
           "seasonNumber": 1,
           "releaseDate": "2016-07-15",
           "episodes": [
-            { "id": "s1e1", "title": "The Vanishing of Will Byers", "duration": 47, "episodeNumber": 1, "watched": true },
-            { "id": "s1e2", "title": "The Weirdo on Maple Street", "duration": 55, "episodeNumber": 2, "watched": true }
+            {
+              "id": "s1e1",
+              "title": "The Vanishing of Will Byers",
+              "duration": 47,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s1e2",
+              "title": "The Weirdo on Maple Street",
+              "duration": 55,
+              "episodeNumber": 2,
+              "watched": true
+            }
           ]
         }
       ]
@@ -151,16 +196,40 @@
           "seasonNumber": 1,
           "releaseDate": "2006-10-01",
           "episodes": [
-            { "id": "s1e1", "title": "Dexter", "duration": 54, "episodeNumber": 1, "watched": true },
-            { "id": "s1e2", "title": "Crocodile", "duration": 52, "episodeNumber": 2, "watched": false }
+            {
+              "id": "s1e1",
+              "title": "Dexter",
+              "duration": 54,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s1e2",
+              "title": "Crocodile",
+              "duration": 52,
+              "episodeNumber": 2,
+              "watched": false
+            }
           ]
         },
         {
           "seasonNumber": 2,
           "releaseDate": "2007-10-07",
           "episodes": [
-            { "id": "s2e1", "title": "It's Alive!", "duration": 55, "episodeNumber": 1, "watched": true },
-            { "id": "s2e2", "title": "Waiting to Exhale", "duration": 52, "episodeNumber": 2, "watched": false }
+            {
+              "id": "s2e1",
+              "title": "It's Alive!",
+              "duration": 55,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s2e2",
+              "title": "Waiting to Exhale",
+              "duration": 52,
+              "episodeNumber": 2,
+              "watched": false
+            }
           ]
         }
       ]
@@ -178,24 +247,103 @@
           "seasonNumber": 1,
           "releaseDate": "2019-12-20",
           "episodes": [
-            { "id": "s1e1", "title": "The End's Beginning", "duration": 60, "episodeNumber": 1, "watched": true },
-            { "id": "s1e2", "title": "Four Marks", "duration": 60, "episodeNumber": 2, "watched": true }
+            {
+              "id": "s1e1",
+              "title": "The End's Beginning",
+              "duration": 60,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s1e2",
+              "title": "Four Marks",
+              "duration": 60,
+              "episodeNumber": 2,
+              "watched": true
+            }
           ]
         },
         {
           "seasonNumber": 2,
           "releaseDate": "2021-12-17",
           "episodes": [
-            { "id": "s2e1", "title": "A Grain of Truth", "duration": 60, "episodeNumber": 1, "watched": true },
-            { "id": "s2e2", "title": "Kaer Morhen", "duration": 60, "episodeNumber": 2, "watched": false }
+            {
+              "id": "s2e1",
+              "title": "A Grain of Truth",
+              "duration": 60,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s2e2",
+              "title": "Kaer Morhen",
+              "duration": 60,
+              "episodeNumber": 2,
+              "watched": false
+            }
           ]
         },
         {
           "seasonNumber": 3,
           "releaseDate": "2023-06-29",
           "episodes": [
-            { "id": "s3e1", "title": "Queen of the North", "duration": 60, "episodeNumber": 1, "watched": false },
-            { "id": "s3e2", "title": "Unseen Elder", "duration": 60, "episodeNumber": 2, "watched": false }
+            {
+              "id": "s3e1",
+              "title": "Queen of the North",
+              "duration": 60,
+              "episodeNumber": 1,
+              "watched": false
+            },
+            {
+              "id": "s3e2",
+              "title": "Unseen Elder",
+              "duration": 60,
+              "episodeNumber": 2,
+              "watched": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "Narcos",
+      "genre": "Crime",
+      "year": 2015,
+      "rating": 8.8,
+      "status": "en_cours",
+      "duration": 50,
+      "seasons": [
+        {
+          "seasonNumber": 1,
+          "releaseDate": "2015-08-28",
+          "episodes": [
+            {
+              "episodeNumber": 1,
+              "title": "Descenso",
+              "duration": 55
+            },
+            {
+              "episodeNumber": 2,
+              "title": "The Sword of Simón Bolívar",
+              "duration": 52
+            }
+          ]
+        },
+        {
+          "seasonNumber": 2,
+          "releaseDate": "2016-09-02",
+          "episodes": [
+            {
+              "episodeNumber": 1,
+              "title": "Free at Last",
+              "duration": 51
+            },
+            {
+              "episodeNumber": 2,
+              "title": "The Cali KGB",
+              "duration": 53
+            }
           ]
         }
       ]

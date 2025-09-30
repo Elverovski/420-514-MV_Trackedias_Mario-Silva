@@ -1,7 +1,10 @@
 import { MediaModel as Media } from '../models/media.model';
+import { SeasonModel as Season } from './season.model';
 import { Statut } from '../enum/statut.enum';
 
 export class SerieModel extends Media {
+  public seasons: Season[];
+
   constructor(
     id: string,
     title: string,
@@ -12,5 +15,6 @@ export class SerieModel extends Media {
     public duration: number
   ) {
     super(id, title, genre, year, rating);
+    this.seasons = []
   }
 }
