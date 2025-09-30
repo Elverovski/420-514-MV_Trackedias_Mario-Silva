@@ -1,5 +1,5 @@
 import { MediaModel as Media } from '../models/media.model';
-import { Status } from '../enum/status.enum';
+import { Statut } from '../enum/statut.enum';
 
 export class SerieModel extends Media {
   constructor(
@@ -8,7 +8,7 @@ export class SerieModel extends Media {
     genre: string,
     year: number,
     rating: number,
-    public status: Status,
+    public status: Statut,
     public duration: number
   ) {
     super(id, title, genre, year, rating);
