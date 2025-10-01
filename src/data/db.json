@@ -3,11 +3,11 @@
     {
       "id": "f1",
       "title": "Shutter Island",
-      "genre": "Thriller",
+      "genre": "Thriller/Mystery",
       "year": 2010,
-      "rating": 8.2,
-      "duration": 138,
-      "watched": false
+      "rating": 8.5,
+      "duration": 140,
+      "watched": true
     },
     {
       "id": "f2",
@@ -47,10 +47,10 @@
     },
     {
       "id": "f6",
-      "title": "The Green Mile",
+      "title": "The Green Mile Directors Cut",
       "genre": "Drama",
       "year": 1999,
-      "rating": 8.6,
+      "rating": 9,
       "duration": 189,
       "watched": true
     },
@@ -91,12 +91,66 @@
       "watched": true
     },
     {
-      "id": "f8",
+      "id": "f11",
       "title": "Interstellar",
       "genre": "Sci-Fi",
       "year": 2014,
       "rating": 8.6,
       "duration": 169,
+      "watched": false
+    },
+    {
+      "id": "f12",
+      "title": "Inception",
+      "genre": "Science Fiction",
+      "year": 2010,
+      "rating": 8.8,
+      "duration": 148,
+      "watched": false
+    },
+    {
+      "id": "f13",
+      "title": "Minecraft",
+      "genre": "Sci-Fi",
+      "year": 2025,
+      "rating": 8.9,
+      "duration": 130,
+      "watched": false
+    },
+    {
+      "id": "f14",
+      "title": "lEAGUE OF LEGENDS ASMDANSDNAS",
+      "genre": "Sci-Fi",
+      "year": 2025,
+      "rating": 8.9,
+      "duration": 130,
+      "watched": true
+    },
+    {
+      "id": "f12",
+      "title": "Inception",
+      "genre": "Science Fiction",
+      "year": 2010,
+      "rating": 8.8,
+      "duration": 148,
+      "watched": false
+    },
+    {
+      "id": "f12",
+      "title": "Inception",
+      "genre": "Science Fiction",
+      "year": 2010,
+      "rating": 8.8,
+      "duration": 148,
+      "watched": false
+    },
+    {
+      "id": "f12",
+      "title": "Inception",
+      "genre": "Science Fiction",
+      "year": 2010,
+      "rating": 8.8,
+      "duration": 148,
       "watched": false
     }
   ],
@@ -115,14 +169,14 @@
           "releaseDate": "2008-01-20",
           "episodes": [
             {
-              "id": "s1e1",
+              "id": "s1s1e1",
               "title": "Pilot",
               "duration": 58,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s1e2",
+              "id": "s1s1e2",
               "title": "Cat's in the Bag...",
               "duration": 48,
               "episodeNumber": 2,
@@ -135,14 +189,14 @@
           "releaseDate": "2009-03-08",
           "episodes": [
             {
-              "id": "s2e1",
+              "id": "s1s2e1",
               "title": "Seven Thirty-Seven",
               "duration": 47,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s2e2",
+              "id": "s1s2e2",
               "title": "Grilled",
               "duration": 48,
               "episodeNumber": 2,
@@ -166,14 +220,14 @@
           "releaseDate": "2016-07-15",
           "episodes": [
             {
-              "id": "s1e1",
+              "id": "s2s1e1",
               "title": "The Vanishing of Will Byers",
               "duration": 47,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s1e2",
+              "id": "s2s1e2",
               "title": "The Weirdo on Maple Street",
               "duration": 55,
               "episodeNumber": 2,
@@ -197,14 +251,14 @@
           "releaseDate": "2006-10-01",
           "episodes": [
             {
-              "id": "s1e1",
+              "id": "s3s1e1",
               "title": "Dexter",
               "duration": 54,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s1e2",
+              "id": "s3s1e2",
               "title": "Crocodile",
               "duration": 52,
               "episodeNumber": 2,
@@ -217,14 +271,14 @@
           "releaseDate": "2007-10-07",
           "episodes": [
             {
-              "id": "s2e1",
+              "id": "s3s2e1",
               "title": "It's Alive!",
               "duration": 55,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s2e2",
+              "id": "s3s2e2",
               "title": "Waiting to Exhale",
               "duration": 52,
               "episodeNumber": 2,
@@ -248,14 +302,14 @@
           "releaseDate": "2019-12-20",
           "episodes": [
             {
-              "id": "s1e1",
+              "id": "s4s1e1",
               "title": "The End's Beginning",
               "duration": 60,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s1e2",
+              "id": "s4s1e2",
               "title": "Four Marks",
               "duration": 60,
               "episodeNumber": 2,
@@ -268,14 +322,14 @@
           "releaseDate": "2021-12-17",
           "episodes": [
             {
-              "id": "s2e1",
+              "id": "s4s2e1",
               "title": "A Grain of Truth",
               "duration": 60,
               "episodeNumber": 1,
               "watched": true
             },
             {
-              "id": "s2e2",
+              "id": "s4s2e2",
               "title": "Kaer Morhen",
               "duration": 60,
               "episodeNumber": 2,
@@ -288,14 +342,14 @@
           "releaseDate": "2023-06-29",
           "episodes": [
             {
-              "id": "s3e1",
+              "id": "s4s3e1",
               "title": "Queen of the North",
               "duration": 60,
               "episodeNumber": 1,
               "watched": false
             },
             {
-              "id": "s3e2",
+              "id": "s4s3e2",
               "title": "Unseen Elder",
               "duration": 60,
               "episodeNumber": 2,
@@ -306,7 +360,38 @@
       ]
     },
     {
-      "id": "s4",
+      "id": "s5",
+      "title": "The Sopranas",
+      "genre": "Crime",
+      "year": 1999,
+      "rating": 9.3,
+      "status": "termine",
+      "duration": 86,
+      "seasons": [
+        {
+          "seasonNumber": 1,
+          "releaseDate": "1999-01-10",
+          "episodes": [
+            {
+              "id": "s5s1e1",
+              "title": "The Sopranos - Pilot",
+              "duration": 60,
+              "episodeNumber": 1,
+              "watched": true
+            },
+            {
+              "id": "s5s1e2",
+              "title": "46 Long",
+              "duration": 50,
+              "episodeNumber": 2,
+              "watched": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
       "title": "Narcos",
       "genre": "Crime",
       "year": 2015,
@@ -319,11 +404,13 @@
           "releaseDate": "2015-08-28",
           "episodes": [
             {
+              "id": "s6s1e1",
               "episodeNumber": 1,
               "title": "Descenso",
               "duration": 55
             },
             {
+              "id": "s6s1e2",
               "episodeNumber": 2,
               "title": "The Sword of Simón Bolívar",
               "duration": 52
@@ -335,11 +422,13 @@
           "releaseDate": "2016-09-02",
           "episodes": [
             {
+              "id": "s6s2e1",
               "episodeNumber": 1,
               "title": "Free at Last",
               "duration": 51
             },
             {
+              "id": "s6s2e2",
               "episodeNumber": 2,
               "title": "The Cali KGB",
               "duration": 53
@@ -347,6 +436,36 @@
           ]
         }
       ]
+    },
+    {
+      "id": "s7",
+      "title": "The Wire",
+      "genre": "Drama",
+      "year": 2002,
+      "rating": 9.3,
+      "status": "en_cours",
+      "duration": 55,
+      "seasons": []
+    },
+    {
+      "id": "s7",
+      "title": "The Wire",
+      "genre": "Drama",
+      "year": 2002,
+      "rating": 9.3,
+      "status": "en_cours",
+      "duration": 55,
+      "seasons": []
+    },
+    {
+      "id": "s7",
+      "title": "The Wire",
+      "genre": "Drama",
+      "year": 2002,
+      "rating": 9.3,
+      "status": "en_cours",
+      "duration": 55,
+      "seasons": []
     }
   ]
 }

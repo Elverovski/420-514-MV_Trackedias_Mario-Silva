@@ -1,0 +1,24 @@
+{"level":"info","message":"Request: PATCH /api/medias/s5 - Body: {\"title\":\"The Sopranos - Remastered\",\"rating\":9.3,\"status\":\"terminee\",\"seasons\":[{\"seasonNumber\":1,\"releaseDate\":\"1999-01-10\",\"episodes\":[{\"id\":\"s5s1e1\",\"title\":\"The Sopranos - Pilot\",\"duration\":60,\"episodeNumber\":1,\"watched\":true},{\"id\":\"s5s1e2\",\"title\":\"46 Long\",\"duration\":50,\"episodeNumber\":2,\"watched\":true}]}]}","timestamp":"2025-09-30 20:25:43"}
+{"level":"info","message":"Série mise à jour partiellement: s5","timestamp":"2025-09-30 20:27:28"}
+{"level":"info","message":"Film mis à jour partiellement: f6","timestamp":"2025-09-30 20:30:32"}
+{"level":"warn","message":"Champs obligatoires manquants pour addMedia","timestamp":"2025-09-30 20:38:23"}
+{"level":"info","message":"Film ajouté: f13","timestamp":"2025-09-30 20:39:06"}
+{"level":"info","message":"Film ajouté: f14","timestamp":"2025-09-30 20:39:30"}
+{"level":"warn","message":"Champs obligatoires manquants pour addMedia","timestamp":"2025-09-30 20:39:42"}
+{"level":"info","message":"Récupération de tous les médias","timestamp":"2025-09-30 21:01:03"}
+{"level":"info","message":"Film trouvé: f3","timestamp":"2025-09-30 21:01:09"}
+{"level":"info","message":"Film ajouté: f12","timestamp":"2025-09-30 21:01:15"}
+{"level":"info","message":"Récupération de tous les médias","timestamp":"2025-09-30 21:02:34"}
+{"level":"info","message":"Film trouvé: f3","timestamp":"2025-09-30 21:02:34"}
+{"level":"info","message":"Film ajouté: f12","timestamp":"2025-09-30 21:02:34"}
+{"level":"info","message":"Série ajoutée: s7","timestamp":"2025-09-30 21:02:34"}
+{"level":"info","message":"Série mise à jour partiellement: s5","timestamp":"2025-09-30 21:02:34"}
+{"level":"info","message":"Film mis à jour partiellement: f6","timestamp":"2025-09-30 21:02:34"}
+{"error":{},"level":"error","message":"Erreur addMedia","timestamp":"2025-09-30 21:02:35"}
+{"level":"info","message":"Recuperation de tous les medias ","timestamp":"2025-09-30 21:13:25"}
+{"level":"info","message":"Film trouvé: f3","timestamp":"2025-09-30 21:13:25"}
+{"level":"info","message":"Film ajouté: f12","timestamp":"2025-09-30 21:13:25"}
+{"level":"info","message":"Série ajoutée: s7","timestamp":"2025-09-30 21:13:25"}
+{"level":"info","message":"Serie mise a jour partiellement: s5","timestamp":"2025-09-30 21:13:25"}
+{"level":"info","message":"Film mis à jour partiellement: f6","timestamp":"2025-09-30 21:13:26"}
+{"error":{},"level":"error","message":"Erreur addMedia","timestamp":"2025-09-30 21:13:26"}

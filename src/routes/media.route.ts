@@ -6,7 +6,7 @@ const mediaController = new MediaController();
 
 router.get('/medias', mediaController.getAllMedia);
 router.get('/medias/:id', mediaController.getMediaById);
-router.post('/medias', mediaController.addMedia)
-
+router.post('/medias', mediaController.addMedia);
+router.patch('/medias/:id', mediaController.patchMedia);
 
 export default router;
