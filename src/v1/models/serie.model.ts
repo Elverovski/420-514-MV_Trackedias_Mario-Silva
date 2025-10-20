@@ -1,4 +1,4 @@
-import { MediaModel as Media } from '../models/media.model';
+import { MediaModel as Media } from './media.model';
 import { SeasonModel as Season } from './season.model';
 import { Statut } from '../enum/statut.enum';
 

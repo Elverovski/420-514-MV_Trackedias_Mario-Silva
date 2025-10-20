@@ -1,4 +1,4 @@
-import { MediaModel as Media } from '../models/media.model'
+import { MediaModel as Media } from './media.model'
 
 export class FilmModel extends Media {
   constructor(
