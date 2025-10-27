@@ -11,10 +11,11 @@ export function validatePlateforme(plateforme: string): boolean {
 }
 
 // RegEx qui permet uniquement les entiers positifs
-export function validateDuration(duration: string): boolean {
-    const durationRegex = /^[1-9][0-9]*$/; 
-    return durationRegex.test(duration);
+export function validateDuration(duration: number | string): boolean {
+    const durationRegex = /^[1-9][0-9]*$/;
+    return durationRegex.test(duration.toString());
 }
+
 
 // RegEx qui permet uniquement les valeurs en_attente, en cours et termine
 export function validateStatus(status: string): boolean {

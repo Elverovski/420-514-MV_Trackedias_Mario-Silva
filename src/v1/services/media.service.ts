@@ -3,8 +3,8 @@ import { SerieService } from './serie.service';
 import { FilmModel } from '../models/film.model';
 import { SerieModel } from '../models/serie.model';
 import { Statut } from '../enum/statut.enum';
-import { validateTitre, validateDuration, validateStatus } from '../utils/regex';
-import { logger } from '../utils/logger';
+import { validateTitre, validateDuration, validateStatus } from '../../utils/regex';
+import { logger } from '../../utils/logger';
 
 export class MediaService {
     static async getAllMedia() {

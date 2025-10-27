@@ -1,0 +1,113 @@
+{"level":"info","message":"Request: GET /api-docs/v1 - Body: undefined","timestamp":"2025-10-22 20:21:27"}
+{"level":"info","message":"Request: GET /api-docs/v1/ - Body: undefined","timestamp":"2025-10-22 20:21:27"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui.css - Body: undefined","timestamp":"2025-10-22 20:21:27"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-bundle.js - Body: undefined","timestamp":"2025-10-22 20:21:27"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-standalone-preset.js - Body: undefined","timestamp":"2025-10-22 20:21:27"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-init.js - Body: undefined","timestamp":"2025-10-22 20:21:27"}
+{"level":"info","message":"Request: GET /api-docs/v1/favicon-32x32.png - Body: undefined","timestamp":"2025-10-22 20:21:28"}
+{"level":"info","message":"Request: GET /api-docs/v1/ - Body: undefined","timestamp":"2025-10-22 20:22:16"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui.css - Body: undefined","timestamp":"2025-10-22 20:22:16"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-bundle.js - Body: undefined","timestamp":"2025-10-22 20:22:16"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-standalone-preset.js - Body: undefined","timestamp":"2025-10-22 20:22:16"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-init.js - Body: undefined","timestamp":"2025-10-22 20:22:16"}
+{"level":"info","message":"Request: GET /api-docs/v2/ - Body: undefined","timestamp":"2025-10-22 20:22:22"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui.css - Body: undefined","timestamp":"2025-10-22 20:22:22"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui-bundle.js - Body: undefined","timestamp":"2025-10-22 20:22:22"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui-standalone-preset.js - Body: undefined","timestamp":"2025-10-22 20:22:22"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui-init.js - Body: undefined","timestamp":"2025-10-22 20:22:22"}
+{"level":"info","message":"Request: GET /api-docs/v2/favicon-32x32.png - Body: undefined","timestamp":"2025-10-22 20:22:22"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-22 21:01:17"}
+{"level":"info","message":"Récupération de tous les films (0)","timestamp":"2025-10-22 21:01:17"}
+{"level":"info","message":"Récupération de toutes les séries (0)","timestamp":"2025-10-22 21:01:17"}
+{"level":"info","message":"Récupération de tous les médias","timestamp":"2025-10-22 21:01:17"}
+{"level":"info","message":"Request: POST /api/v2/medias - Body: {\"id\":\"f13\",\"title\":\"Inception\",\"genre\":\"Science Fiction\",\"year\":2010,\"rating\":8.8,\"duration\":148,\"watched\":false}","timestamp":"2025-10-22 21:55:18"}
+{"error":{"code":13297,"errorLabelSet":{},"errorResponse":{"code":13297,"errmsg":"db already exists with different case already have: [trackedias] trying to create [Trackedias]","index":0},"index":0},"level":"error","message":"Erreur addMedia","timestamp":"2025-10-22 21:55:18"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-22 21:55:47"}
+{"level":"info","message":"Récupération de tous les films (0)","timestamp":"2025-10-22 21:55:47"}
+{"level":"info","message":"Récupération de toutes les séries (0)","timestamp":"2025-10-22 21:55:47"}
+{"level":"info","message":"Récupération de tous les médias","timestamp":"2025-10-22 21:55:47"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-22 21:59:22"}
+{"level":"info","message":"Récupération de tous les films (0)","timestamp":"2025-10-22 21:59:22"}
+{"level":"info","message":"Récupération de toutes les séries (0)","timestamp":"2025-10-22 21:59:22"}
+{"level":"info","message":"Récupération de tous les médias","timestamp":"2025-10-22 21:59:22"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-22 21:59:24"}
+{"level":"info","message":"Récupération de tous les films (0)","timestamp":"2025-10-22 21:59:24"}
+{"level":"info","message":"Récupération de toutes les séries (0)","timestamp":"2025-10-22 21:59:24"}
+{"level":"info","message":"Récupération de tous les médias","timestamp":"2025-10-22 21:59:24"}
+{"level":"info","message":"✅ Base de datos sincronizada con los JSON al iniciar la app","timestamp":"2025-10-22 22:39:24"}
+{"level":"info","message":"✅ Base de datos sincronizada con los JSON al iniciar la app","timestamp":"2025-10-22 22:39:34"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-22 22:40:21"}
+{"level":"info","message":"Recuperation de tous les medias ","timestamp":"2025-10-22 22:40:21"}
+{"level":"info","message":"Request: GET /api/v1/medias - Body: undefined","timestamp":"2025-10-22 22:40:28"}
+{"level":"info","message":"Recuperation de tous les medias ","timestamp":"2025-10-22 22:40:28"}
+{"level":"info","message":"✅ Base de datos sincronizada con los JSON al iniciar la app","timestamp":"2025-10-22 22:45:13"}
+{"level":"info","message":"✅ Base de datos sincronizada con los JSON al iniciar la app","timestamp":"2025-10-22 22:45:20"}
+{"level":"info","message":"✅ Base de datos sincronizada con los JSON al iniciar la app","timestamp":"2025-10-22 22:52:25"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-22 22:52:27"}
+{"level":"info","message":"Recuperation de tous les medias ","timestamp":"2025-10-22 22:52:27"}
+{"level":"info","message":"Request: POST /api/v2/medias - Body: {\"id\":\"f14\",\"title\":\"Inception\",\"genre\":\"Science Fiction\",\"year\":2010,\"rating\":8.8,\"duration\":148,\"watched\":false}","timestamp":"2025-10-22 22:52:35"}
+{"level":"info","message":"Film ajouté: f14","timestamp":"2025-10-22 22:52:35"}
+{"level":"warn","message":"⚠️ Fichier manquant : ratings.json","timestamp":"2025-10-23 19:23:38"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:23:38"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:25:27"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:25:48"}
+{"level":"warn","message":"⚠️ Fichier manquant : films.json","timestamp":"2025-10-23 19:26:33"}
+{"level":"warn","message":"⚠️ Fichier manquant : series.json","timestamp":"2025-10-23 19:26:33"}
+{"level":"warn","message":"⚠️ Fichier manquant : users.json","timestamp":"2025-10-23 19:26:33"}
+{"level":"warn","message":"⚠️ Fichier manquant : ratings.json","timestamp":"2025-10-23 19:26:33"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:26:34"}
+{"level":"warn","message":"⚠️ Fichier manquant : films.json","timestamp":"2025-10-23 19:26:43"}
+{"level":"warn","message":"⚠️ Fichier manquant : series.json","timestamp":"2025-10-23 19:26:43"}
+{"level":"warn","message":"⚠️ Fichier manquant : users.json","timestamp":"2025-10-23 19:26:43"}
+{"level":"warn","message":"⚠️ Fichier manquant : ratings.json","timestamp":"2025-10-23 19:26:43"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:26:44"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:28:17"}
+{"level":"info","message":"✅ Base de données MongoDB synchronisée avec les JSON avec succès","timestamp":"2025-10-23 19:30:37"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:37:40"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:38:21"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:38:24"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:38:41"}
+{"level":"info","message":"Request: GET /api-docs/v1/ - Body: undefined","timestamp":"2025-10-23 19:40:00"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui.css - Body: undefined","timestamp":"2025-10-23 19:40:00"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-standalone-preset.js - Body: undefined","timestamp":"2025-10-23 19:40:00"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-bundle.js - Body: undefined","timestamp":"2025-10-23 19:40:00"}
+{"level":"info","message":"Request: GET /api-docs/v1/swagger-ui-init.js - Body: undefined","timestamp":"2025-10-23 19:40:00"}
+{"level":"info","message":"Request: GET /api-docs/v2 - Body: undefined","timestamp":"2025-10-23 19:40:05"}
+{"level":"info","message":"Request: GET /api-docs/v2/ - Body: undefined","timestamp":"2025-10-23 19:40:05"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui.css - Body: undefined","timestamp":"2025-10-23 19:40:05"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui-bundle.js - Body: undefined","timestamp":"2025-10-23 19:40:05"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui-standalone-preset.js - Body: undefined","timestamp":"2025-10-23 19:40:05"}
+{"level":"info","message":"Request: GET /api-docs/v2/swagger-ui-init.js - Body: undefined","timestamp":"2025-10-23 19:40:05"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-23 19:40:29"}
+{"error":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Mario\\Desktop\\420-514-MV_Trackedias_Mario-Silva\\src\\data\\films.json","syscall":"open"},"level":"error","message":"Erreur getAllMedia","timestamp":"2025-10-23 19:40:29"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-23 19:40:34"}
+{"error":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Mario\\Desktop\\420-514-MV_Trackedias_Mario-Silva\\src\\data\\films.json","syscall":"open"},"level":"error","message":"Erreur getAllMedia","timestamp":"2025-10-23 19:40:34"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:42:24"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:42:34"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:42:47"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:42:50"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:42:57"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:45:07"}
+{"level":"info","message":"Request: GET /api/v2/medias - Body: undefined","timestamp":"2025-10-23 19:45:12"}
+{"level":"info","message":"🎬 Récupération de tous les médias","timestamp":"2025-10-23 19:45:12"}
+{"level":"info","message":"Request: POST /api/v2/medias - Body: {\"id\":\"f15\",\"title\":\"Interstellar\",\"genre\":\"Science Fiction\",\"year\":2014,\"rating\":8.6,\"duration\":169,\"watched\":true}","timestamp":"2025-10-23 19:45:36"}
+{"level":"info","message":"✅ Film ajouté: f15","timestamp":"2025-10-23 19:45:36"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:54:36"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:55:34"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:55:39"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 19:55:48"}
+{"level":"info","message":"Request: GET / - Body: undefined","timestamp":"2025-10-23 19:56:01"}
+{"level":"info","message":"Request: GET /favicon.ico - Body: undefined","timestamp":"2025-10-23 19:56:01"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:00:14"}
+{"level":"info","message":"Request: GET / - Body: undefined","timestamp":"2025-10-23 20:02:44"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:10:53"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:15:14"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:37:19"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:37:39"}
+{"level":"info","message":"Request: GET / - Body: undefined","timestamp":"2025-10-23 20:38:04"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:41:05"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:45:35"}
+{"level":"info","message":"✅ Base de données MongoDB (v2) synchronisée avec les JSON","timestamp":"2025-10-23 20:45:55"}
+{"level":"info","message":"MongoDB synchronisee avec les JSON","timestamp":"2025-10-23 22:14:38"}
+{"level":"info","message":"MongoDB synchronisee avec les JSON","timestamp":"2025-10-23 22:18:50"}
+{"level":"info","message":"MongoDB synchronisee avec les JSON","timestamp":"2025-10-23 22:18:52"}
