@@ -1,60 +1,39 @@
-import { SerieModel as Serie } from '../models/serie.model'
+import { SerieModel as Serie } from '../models/serie.model';
 import * as fs from 'fs';
+import * as path from 'path';
 
-const filepath = "./src/data/db.json";
-const serie: Serie[] = [];
+const filepath = path.join(process.cwd(), 'src/v2/data/series.json');
+
+if (!fs.existsSync(filepath)) fs.writeFileSync(filepath, "[]", "utf8");
 
 export class SerieService {
-    // Methode GET pour obtenir touts les series
     public static async getAllSeries(): Promise<Serie[]> {
-        return JSON.parse(fs.readFileSync(filepath, "utf8"))["serie"]
+        const data = fs.readFileSync(filepath, "utf8");
+        return JSON.parse(data || "[]");
     }
 
-
-    // Methode GET pour obtenir une serie specifique par le id
     public static async getSerieById(id: string): Promise<Serie | undefined> {
-        const series: Serie[] = JSON.parse(fs.readFileSync(filepath, "utf8"))["serie"];
-        return series.find(serie => serie.id === id);
+        const series = await this.getAllSeries();
+        return series.find(s => s.id === id);
     }
 
-
-    // Methode POST pour creer une serie
     public static async createSerie(newSerie: Serie): Promise<void> {
-        const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
-        if (!data["serie"]) data["serie"] = [];
-        data["serie"].push(newSerie);
-        fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
+        const series = await this.getAllSeries();
+        series.push(newSerie);
+        fs.writeFileSync(filepath, JSON.stringify(series, null, 2), "utf8");
     }
 
-    // METHODE PUT pour mettre a jour une serie
-    public static async updateSerie(newSerie: Serie): Promise<void> {
-        const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
-        if (!data["serie"]) data["serie"] = [];
-        const index = data["serie"].findIndex((s: Serie) => s.id === newSerie.id);
-
-        if (index !== -1) {
-            data["serie"][index] = newSerie;
-        } else {
-            data["serie"].push(newSerie);
-        }
-        fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
+    public static async updateSerie(updatedSerie: Serie): Promise<void> {
+        const series = await this.getAllSeries();
+        const index = series.findIndex(s => s.id === updatedSerie.id);
+        if (index !== -1) series[index] = updatedSerie;
+        else series.push(updatedSerie);
+        fs.writeFileSync(filepath, JSON.stringify(series, null, 2), "utf8");
     }
 
-
-    // METHODE DELETE pour efface une serie
     public static async deleteSerie(id: string): Promise<void> {
-        const data = JSON.parse(fs.readFileSync(filepath, "utf8"));
-        if (!data["serie"]) data["serie"] = [];
-        data["serie"] = data["serie"].filter((s: Serie) => s.id !== id);
-        fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf8");
+        const series = await this.getAllSeries();
+        const filtered = series.filter(s => s.id !== id);
+        fs.writeFileSync(filepath, JSON.stringify(filtered, null, 2), "utf8");
     }
-
-
-
-
 }
-
-
-
-
-

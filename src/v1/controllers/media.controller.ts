@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
 import { MediaService } from '../services/media.service';
-import { logger } from '../utils/logger';
+import { logger } from '../../utils/logger';
 
 export class MediaController {
+  
   public async getAllMedia(req: Request, res: Response): Promise<void> {
     try {
       const result = await MediaService.getAllMedia();

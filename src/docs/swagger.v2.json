@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Trackedias API",
+    "version": "2.0.0",
+    "description": "Version stable l’API."
+  },
+  "servers": [
+    { "url": "http://localhost:3000/api/v2" }
+  ]
+}
