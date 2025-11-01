@@ -1,43 +1,40 @@
-import { RatingModel, RatingTarget } from '../models/rating.model';
-import * as fs from 'fs';
-import * as path from 'path';
-import { logger } from '../../utils/logger';
-
-const FILE_PATH = path.join(process.cwd(), 'src/data/ratings.json');
-
-function readRatings(): RatingModel[] {
-  if (!fs.existsSync(FILE_PATH)) fs.writeFileSync(FILE_PATH, '[]', 'utf-8');
-  const raw = fs.readFileSync(FILE_PATH, 'utf-8');
-  return JSON.parse(raw) as RatingModel[];
-}
-
-function writeRatings(ratings: RatingModel[]) {
-  fs.writeFileSync(FILE_PATH, JSON.stringify(ratings, null, 2), 'utf-8');
-}
+import Rating from "../schemas/rating.schema";
+import { IRating } from "../interfaces/rating.interface";
 
 export class RatingService {
 
-  static async addRating(rating: RatingModel) {
-    const ratings = readRatings();
-    ratings.push(rating);
-    writeRatings(ratings);
-    logger.info(`Rating ajouté par user ${rating.userId} sur ${rating.target} ${rating.targetId}`);
-    return rating;
-  }
+    public static async addRating(data: Partial<IRating>): Promise<IRating> {
+        const { userId, target, targetId, score, review } = data;
 
-  static async getAllRatings() {
-    return readRatings();
-  }
+        if (!userId) throw new Error("userId manquant");
+        if (!target || !["film", "episode"].includes(target)) throw new Error("Target invalide");
+        if (!targetId) throw new Error("targetId manquant");
+        if (typeof score !== "number" || score < 1 || score > 5) throw new Error("Score invalide : 1-5");
 
-  static async getRatingById(id: string) {
-    const ratings = readRatings();
-    return ratings.find(r => r._id === id) || null;
-  }
+        const rating = new Rating({ userId, target, targetId, score, review });
+        return rating.save();
+    }
 
-  static async getAverageRating(target: RatingTarget, targetId: string) {
-    const ratings = readRatings().filter(r => r.target === target && r.targetId === targetId);
-    if (ratings.length === 0) return 0;
-    const avg = ratings.reduce((sum, r) => sum + r.score, 0) / ratings.length;
-    return parseFloat(avg.toFixed(2));
-  }
+    public static async getAllRatings(): Promise<IRating[]> {
+        return Rating.find();
+    }
+
+    public static async getRatingById(id: string): Promise<IRating | null> {
+        return Rating.findById(id);
+    }
+
+    public static async getRatingsByTarget(target: "film" | "episode", targetId: string): Promise<IRating[]> {
+        return Rating.find({ target, targetId });
+    }
+
+    public static async getAverageRating(target: "film" | "episode", targetId: string): Promise<number> {
+        const ratings = await Rating.find({ target, targetId });
+        if (!ratings.length) return 0;
+        const avg = ratings.reduce((sum, r) => sum + r.score, 0) / ratings.length;
+        return parseFloat(avg.toFixed(2));
+    }
+
+    public static async deleteRating(id: string): Promise<IRating | null> {
+        return Rating.findByIdAndDelete(id);
+    }
 }

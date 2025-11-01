@@ -1,39 +1,33 @@
-import { UserModel as User } from '../models/user.model';
-import * as fs from 'fs';
-import * as path from 'path';
-
-const filepath = path.join(process.cwd(), 'src/v2/data/users.json');
-
-if (!fs.existsSync(filepath)) fs.writeFileSync(filepath, "[]", "utf8");
+import User from "../schemas/user.schema";
+import { IUser } from "../interfaces/user.interface";
+import { validateEmail, validateNom, validateUsername, validateRole } from "../../utils/regex";
 
 export class UserService {
-    public static async getAllUsers(): Promise<User[]> {
-        const data = fs.readFileSync(filepath, "utf8");
-        return JSON.parse(data || "[]");
+
+    public static async getAllUsers(): Promise<IUser[]> {
+        return await User.find();
     }
 
-    public static async getUserById(id: number): Promise<User | undefined> {
-        const users = await this.getAllUsers();
-        return users.find(u => u.id === id);
+    public static async getUserById(id: string): Promise<IUser | null> {
+        return await User.findOne({ id });
     }
 
-    public static async createUser(newUser: User): Promise<void> {
-        const users = await this.getAllUsers();
-        users.push(newUser);
-        fs.writeFileSync(filepath, JSON.stringify(users, null, 2), "utf8");
+    public static async getUserByEmail(email: string): Promise<IUser | null> {
+        return await User.findOne({ email });
     }
 
-    public static async updateUser(updatedUser: User): Promise<void> {
-        const users = await this.getAllUsers();
-        const index = users.findIndex(u => u.id === updatedUser.id);
-        if (index !== -1) users[index] = updatedUser;
-        else users.push(updatedUser);
-        fs.writeFileSync(filepath, JSON.stringify(users, null, 2), "utf8");
+    public static async updateUser(id: string, updatedData: Partial<IUser>): Promise<IUser | null> {
+
+        if (updatedData.email && !validateEmail(updatedData.email)) throw new Error('Email invalide');
+        if (updatedData.nom && !validateNom(updatedData.nom)) throw new Error('Nom invalide');
+        if (updatedData.username && !validateUsername(updatedData.username)) throw new Error('Nom d’utilisateur invalide');
+        if (updatedData.role && !validateRole(updatedData.role)) throw new Error('Role invalide');
+
+        return await User.findOneAndUpdate({ id }, updatedData, { new: true });
     }
 
-    public static async deleteUser(id: number): Promise<void> {
-        const users = await this.getAllUsers();
-        const filtered = users.filter(u => u.id !== id);
-        fs.writeFileSync(filepath, JSON.stringify(filtered, null, 2), "utf8");
+    public static async deleteUser(id: string): Promise<IUser | null> {
+        return await User.findOneAndDelete({ id });
     }
+
 }

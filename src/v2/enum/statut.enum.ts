@@ -1,5 +1,5 @@
 export enum Statut {
-    EN_COURS = "en_cours",
-    EN_ATTENTE = "en_attente",
-    TERMINE = "termine"
+    EN_COURS = "EN_COURS",
+    EN_ATTENTE = "EN_ATTENTEE",
+    TERMINE = "TERMINEE"
 }

@@ -1,24 +1,66 @@
-// RegEx qui permet uniquement les lettres, chiffres et espace
+export function validateEmail(email: string): boolean {
+  const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+export function validateNom(nom: string): boolean {
+  const nomRegex = /^[A-Za-zÀ-ÿ\s'-]+$/;
+  return nomRegex.test(nom);
+}
+
+export function validateUsername(username: string): boolean {
+  const usernameRegex = /^[a-zA-Z0-9._-]{3,30}$/;
+  return usernameRegex.test(username);
+}
+
+
+export function validatePassword(password: string): boolean {
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/;
+  return passwordRegex.test(password);
+}
+
+export function validateRole(role: string): boolean {
+  const roleRegex = /^(User|Admin)$/;
+  return roleRegex.test(role);
+}
+
 export function validateTitre(titre: string): boolean {
-    const titreRegex = /^[a-zA-Z0-9 ]+$/;
-    return titreRegex.test(titre);
+  const titreRegex = /^[\wÀ-ÿ0-9 .,'’!?-]{1,200}$/;
+  return titreRegex.test(titre);
 }
 
-// RegEx qui permet uniquement les lettres
-export function validatePlateforme(plateforme: string): boolean {
-    const plateformeRegex = /^[a-zA-Z]+$/;
-    return plateformeRegex.test(plateforme);
+export function validateGenre(genre: string): boolean {
+  const genreRegex = /^[A-Za-zÀ-ÿ\s'-]{1,30}$/;
+  return genreRegex.test(genre);
 }
 
-// RegEx qui permet uniquement les entiers positifs
-export function validateDuration(duration: number | string): boolean {
-    const durationRegex = /^[1-9][0-9]*$/;
-    return durationRegex.test(duration.toString());
+export function validateStatuts(statut: string): boolean {
+  const statutRegex = /^(en_cours|en_attente|termine)$/;
+  return statutRegex.test(statut);
 }
 
-
-// RegEx qui permet uniquement les valeurs en_attente, en cours et termine
-export function validateStatus(status: string): boolean {
-    const statusRegex = /^(en_attente|en_cours|termine)$/;
-    return statusRegex.test(status);
+export function validateDuration(durationMin: number): boolean {
+  return durationMin >= 1 && durationMin <= 600;
 }
+
+export function validateEpisodeDuration(durationMin: number): boolean {
+  return durationMin >= 1 && durationMin <= 300;
+}
+
+export function validateSeasonNo(seasonNo: number): boolean {
+  return seasonNo >= 1;
+}
+
+export function validateEpisodeNo(epNo: number): boolean {
+  return epNo >= 1;
+}
+
+export function validateScore(score: number): boolean {
+  return score >= 0 && score <= 10;
+}
+
+export function sanitizeReview(review?: string): string {
+  if (!review) return '';
+  return review.replace(/<[^>]*>?/gm, '').substring(0, 2000);
+}
+ 

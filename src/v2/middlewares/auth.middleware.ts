@@ -28,7 +28,7 @@ export function authenticateToken(req: Request, res: Response, next: NextFunctio
   }
 }
 
-/** Middleware pour autoriser uniquement certains rôles */
+
 export function authorizeRole(role: Role) {
   return (req: Request, res: Response, next: NextFunction) => {
     const user = (req as any).user as JwtPayload;

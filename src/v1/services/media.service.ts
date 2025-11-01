@@ -3,7 +3,7 @@ import { SerieService } from './serie.service';
 import { FilmModel } from '../models/film.model';
 import { SerieModel } from '../models/serie.model';
 import { Statut } from '../enum/statut.enum';
-import { validateTitre, validateDuration, validateStatus } from '../../utils/regex';
+import { validateTitre, validateDuration, validateStatuts } from '../../utils/regex';
 import { logger } from '../../utils/logger';
 
 export class MediaService {
@@ -49,7 +49,7 @@ export class MediaService {
             // Si serie
         } else if (id.startsWith('s')) {
             // Validation RegEx
-            if (!status || !validateStatus(status)) throw new Error("Statut invalide pour serie");
+            if (!status || !validateStatuts(status)) throw new Error("Statut invalide pour serie");
 
             const newSerie = new SerieModel(id, title, genre, year, rating, status as Statut, duration);
             newSerie.seasons = seasons || [];
@@ -92,7 +92,7 @@ export class MediaService {
             if (!existingSerie) throw new Error("Serie non trouvée");
 
             // Validation RegEx
-            if (status && !validateStatus(status)) throw new Error("Statut invalide");
+            if (status && !validateStatuts(status)) throw new Error("Statut invalide");
 
             const updatedSerie = new SerieModel(
                 id,

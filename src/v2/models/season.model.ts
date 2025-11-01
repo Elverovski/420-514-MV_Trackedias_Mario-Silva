@@ -1,10 +1,7 @@
-import { EpisodeModel as Episode } from './episode.model';
+import { EpisodeModel } from "./episode.model";
 
-export class SeasonModel {
-  constructor(
-    public seriesId: string,
-    public seasonNumber: number, 
-    public releaseDate: Date,
-    public episodes: Episode[] = [] 
-  ) {}
+export interface SeasonModel {
+  seasonNumber: number;
+  releaseDate: string;
+  episodes: EpisodeModel[];
 }

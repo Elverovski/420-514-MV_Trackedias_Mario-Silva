@@ -5,9 +5,10 @@ import { authenticateToken } from '../middlewares/auth.middleware';
 const router = Router();
 const controller = new RatingController();
 
-router.post('/', authenticateToken, controller.addRating);
-router.get('/', controller.getAllRatings);
-router.get('/:id', controller.getRatingById);
-router.get('/average/:target/:targetId', controller.getAverageRating);
+router.post('/ratings', authenticateToken, controller.addRating.bind(controller));
+router.get('/ratings', controller.getAllRatings.bind(controller));
+router.get('/ratings/:id', controller.getRatingById.bind(controller));
+router.get('/ratings/avg/:target/:targetId', controller.getAverageRating.bind(controller));
+router.delete('/ratings/:id', authenticateToken, controller.deleteRating.bind(controller));
 
 export default router;

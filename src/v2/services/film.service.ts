@@ -1,39 +1,44 @@
-import { FilmModel as Film } from '../models/film.model';
-import * as fs from 'fs';
-import * as path from 'path';
-
-const filepath = path.join(process.cwd(), 'src/v2/data/films.json');
-
-if (!fs.existsSync(filepath)) fs.writeFileSync(filepath, "[]", "utf8");
+import Film from "../schemas/film.schema";
+import { IFilm } from "../interfaces/film.interface";
 
 export class FilmService {
-    public static async getAllFilms(): Promise<Film[]> {
-        const data = fs.readFileSync(filepath, "utf8");
-        return JSON.parse(data || "[]");
-    }
+  public static async getAllFilms(): Promise<IFilm[]> {
+    return await Film.find();
+  }
 
-    public static async getFilmById(id: string): Promise<Film | undefined> {
-        const films = await this.getAllFilms();
-        return films.find(f => f.id === id);
-    }
+  public static async getFilmById(id: string): Promise<IFilm | null> {
+    return await Film.findOne({ id });
+  }
 
-    public static async createFilm(newFilm: Film): Promise<void> {
-        const films = await this.getAllFilms();
-        films.push(newFilm);
-        fs.writeFileSync(filepath, JSON.stringify(films, null, 2), "utf8");
-    }
+  public static async createFilm(newFilm: Partial<IFilm>): Promise<IFilm> {
+    const film = new Film(newFilm);
+    return await film.save();
+  }
 
-    public static async updateFilm(updatedFilm: Film): Promise<void> {
-        const films = await this.getAllFilms();
-        const index = films.findIndex(f => f.id === updatedFilm.id);
-        if (index !== -1) films[index] = updatedFilm;
-        else films.push(updatedFilm);
-        fs.writeFileSync(filepath, JSON.stringify(films, null, 2), "utf8");
-    }
+  public static async updateFilm(id: string, updatedFilm: Partial<IFilm>): Promise<IFilm | null> {
+    return await Film.findOneAndUpdate({ id }, updatedFilm, { new: true });
+  }
 
-    public static async deleteFilm(id: string): Promise<void> {
-        const films = await this.getAllFilms();
-        const filtered = films.filter(f => f.id !== id);
-        fs.writeFileSync(filepath, JSON.stringify(filtered, null, 2), "utf8");
-    }
+  public static async deleteFilm(id: string): Promise<IFilm | null> {
+    return await Film.findOneAndDelete({ id });
+  }
+
+  public static async getFilteredFilms(query: any) {
+    const { title, genre, minYear, maxDur, page = 1, limit = 10 } = query;
+
+    const filter: any = {};
+    if (title) filter.title = { $regex: title, $options: "i" };
+    if (genre) filter.genre = genre;
+    if (minYear) filter.year = { $gte: parseInt(minYear) };
+    if (maxDur) filter.duration = { $lte: parseInt(maxDur) };
+
+    const p = Math.max(1, parseInt(page));
+    const l = Math.min(100, Math.max(1, parseInt(limit)));
+
+    const total = await Film.countDocuments(filter);
+    const items = await Film.find(filter).skip((p - 1) * l).limit(l);
+
+    return { items, total, page: p, pages: Math.ceil(total / l) };
+  }
+
 }

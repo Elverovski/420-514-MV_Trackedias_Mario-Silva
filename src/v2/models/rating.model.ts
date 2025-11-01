@@ -1,7 +1,6 @@
-export type RatingTarget = 'movie' | 'episode';
+export type RatingTarget = 'film' | 'episode';
 
 export class RatingModel {
-  public _id?: string;
 
   constructor(
     public userId: number,

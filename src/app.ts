@@ -1,68 +1,64 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import https from 'https';
 import fs from 'fs';
 import path from 'path';
-import rateLimit, { RateLimitRequestHandler } from 'express-rate-limit';
+import helmet from 'helmet';
+import cors from 'cors';
 import config from 'config';
 import { logger } from './utils/logger';
 import { setupSwagger } from './utils/swagger';
+import { connectDB } from './db/mongo';
+
+// Routes
 import mediaRouteV1 from './v1/routes/media.route';
 import mediaRouteV2 from './v2/routes/media.route';
-import { connectDB } from './config/mongo';
-import { initializeDB } from './config/initializeDb';
+import authRouteV2 from './v2/routes/auth.route';
+import userRouteV2 from './v2/routes/user.route';
+import filmRouteV2 from './v2/routes/film.route'
+import serieRouteV2 from './v2/routes/serie.route' 
+import ratingRouteV2 from './v2/routes/rating.route'
 
 const app = express();
 const port = process.env.PORT || 3443;
 
+// Middleware
 app.use(express.json());
-
-const windowMs: number = config.get<number>('security.rateLimit.windowMs');
-const max: number = config.get<number>('security.rateLimit.max');
-
-const limiter: RateLimitRequestHandler = rateLimit({
-  windowMs: 60 * 1000 ,
-  max: 5,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: 'Trop de requêtes, veuillez réessayer plus tard'
-});
-
-// Appliquer globalement
-app.use(limiter);
+app.use(helmet());
+app.use(cors({ origin: config.get<string[]>('security.cors.origins'), credentials: true }));
 
 // Middleware de log
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   logger.info(`Request: ${req.method} ${req.url} - Body: ${JSON.stringify(req.body)}`);
   next();
 });
 
 // Routes
-app.get('/', (req, res) => {
-  res.send('Connexion HTTPS sécurisée');
-});
-
+app.get('/', (_req, res) => res.send('Connexion HTTPS sécurisée'));
 setupSwagger(app);
 app.use('/api/v1', mediaRouteV1);
 app.use('/api/v2', mediaRouteV2);
-
-// Not Found
-app.use((req, res) => {
-  res.status(404).json({ message: 'Endpoint non trouvé' });
-});
-
+app.use('/api/v2/auth', authRouteV2);
+app.use('/api/v2', userRouteV2);
+app.use('/api/v2', filmRouteV2);
+app.use('/api/v2', serieRouteV2);
+app.use('/api/v2', ratingRouteV2);
+// Lancement du serveur HTTPS
 async function startApp() {
   await connectDB();
-  await initializeDB();
 
   const options = {
     key: fs.readFileSync(path.join(__dirname, '../key.pem')),
-    cert: fs.readFileSync(path.join(__dirname, '../cert.pem'))
+    cert: fs.readFileSync(path.join(__dirname, '../cert.pem')),
   };
 
   https.createServer(options, app).listen(port, () => {
-    console.log(`🚀 API HTTPS disponible sur https://localhost:${port}`);
+    logger.info(`🎬 Trackedias disponible sur https://localhost:${port}`);
   });
 }
 
-startApp().catch(console.error);
+startApp().catch(err => {
+  logger.error('❌ Échec du démarrage de l’application', { err });
+  process.exit(1);
+});
+
 export default app;

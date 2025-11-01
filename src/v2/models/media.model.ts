@@ -1,6 +1,5 @@
 
 export abstract class MediaModel {
-    public _id?: string; 
     constructor(
         public id: string,
         public title: string,

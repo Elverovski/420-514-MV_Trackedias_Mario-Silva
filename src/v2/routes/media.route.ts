@@ -1,15 +1,14 @@
 import { Router } from 'express';
 import { MediaController } from '../controllers/media.controller';
-import { authorizeRole } from '../middlewares/auth.middleware';
-import { Role } from '../enum/role.enum'; 
+import { authenticateToken, authorizeRole } from '../middlewares/auth.middleware';
+import { Role } from '../enum/role.enum';
 
 const router = Router();
 const mediaController = new MediaController();
 
-router.get('/medias', mediaController.getAllMedia);
-router.get('/medias/:id', mediaController.getMediaById);
-
-router.post('/medias', authorizeRole(Role.ADMIN), mediaController.addMedia);
-router.patch('/medias/:id', authorizeRole(Role.ADMIN), mediaController.patchMedia);
+router.get('/medias', mediaController.getAllMedia.bind(mediaController));
+router.get('/medias/:id', mediaController.getMediaById.bind(mediaController));
+router.post('/medias', authenticateToken, authorizeRole(Role.ADMIN), mediaController.addMedia.bind(mediaController));
+router.patch('/medias/:id', authenticateToken, authorizeRole(Role.ADMIN), mediaController.patchMedia.bind(mediaController));
 
 export default router;

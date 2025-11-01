@@ -4,16 +4,25 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export const setupSwagger = (app: Express): void => {
-  const swaggerV1 = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '../docs/swagger.v1.json'), 'utf-8')
-  );
-  const swaggerV2 = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '../docs/swagger.v2.json'), 'utf-8')
-  );
+  try {
+    const swaggerV1Path = path.join(process.cwd(), 'src/docs/swagger.v1.json');
+    const swaggerV2Path = path.join(process.cwd(), 'src/docs/swagger.v2.json');
 
-  app.use('/api-docs/v1', swaggerUi.serve, swaggerUi.setup(swaggerV1));
-  app.use('/api-docs/v2', swaggerUi.serve, swaggerUi.setup(swaggerV2));
+    if (!fs.existsSync(swaggerV1Path) || !fs.existsSync(swaggerV2Path)) {
+      console.error('Fichiers Swagger introuvables ou invalides');
+      return;
+    }
 
-  console.log('Swagger v1 disponible sur http://localhost:3000/api-docs/v1');
-  console.log('Swagger v2 disponible sur http://localhost:3000/api-docs/v2');
+    const swaggerV1 = JSON.parse(fs.readFileSync(swaggerV1Path, 'utf-8'));
+    const swaggerV2 = JSON.parse(fs.readFileSync(swaggerV2Path, 'utf-8'));
+
+
+    app.use('/api-docs/v1', swaggerUi.serveFiles(swaggerV1), swaggerUi.setup(swaggerV1));
+    app.use('/api-docs/v2', swaggerUi.serveFiles(swaggerV2), swaggerUi.setup(swaggerV2));
+
+    console.log('📘 Swagger v1 disponible sur https://localhost:3443/api-docs/v1');
+    console.log('📙 Swagger v2 disponible sur https://localhost:3443/api-docs/v2');
+  } catch (err) {
+    console.error('Erreur lors du chargement de Swagger :', err);
+  }
 };

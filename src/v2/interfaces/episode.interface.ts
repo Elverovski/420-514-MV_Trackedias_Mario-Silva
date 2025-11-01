@@ -1,7 +1,7 @@
-export interface EpisodeModel {
+export interface IEpisode {
   id: string;
   title: string;
   duration: number;
   episodeNumber: number;
-  watched?: boolean;
+  watched: boolean;
 }
